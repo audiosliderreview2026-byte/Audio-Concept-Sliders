@@ -1,0 +1,37 @@
+name: audioldm2-slider
+
+channels:
+  - pytorch
+  - conda-forge
+
+dependencies:
+  - python=3.11
+
+  # Core
+  - pytorch
+  - torchaudio
+  - torchvision
+
+  # Audio
+  - librosa
+  - soundfile
+  - ffmpeg
+
+  # Scientific stack
+  - numpy
+  - scipy
+  - pandas
+  - matplotlib
+
+  # Utilities
+  - tqdm
+  - pip
+
+  - pip:
+      - diffusers
+      - transformers
+      - accelerate
+      - peft
+      - sentencepiece
+      - einops
+      - safetensors
