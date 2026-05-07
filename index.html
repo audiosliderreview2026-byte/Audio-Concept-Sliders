@@ -1,22 +1,286 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <title>Audio Concept Slider Demo</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      max-width: 1600px;
+    }
+
+    h1, h2 {
+      margin-top: 40px;
+    }
+
+    .slider-section {
+      margin-bottom: 60px;
+    }
+
+    .audio-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 18px;
+      align-items: start;
+    }
+
+    .audio-card {
+      text-align: center;
+    }
+
+    .audio-card h4 {
+      margin-bottom: 8px;
+      font-size: 14px;
+      font-weight: normal;
+    }
+
+    audio {
+      width: 100%;
+    }
+
+    .train-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px 40px;
+      margin-top: 20px;
+    }
+
+    .train-row {
+      display: contents;
+    }
+
+    .train-card {
+      text-align: center;
+    }
+
+    .train-card h4 {
+      margin-bottom: 8px;
+      font-size: 14px;
+      font-weight: normal;
+    }
+
+    .caption {
+      margin-bottom: 20px;
+      color: #555;
+    }
+  </style>
 </head>
+
 <body>
+
   <h1>Calm → Angry Footstep Slider</h1>
 
-  <h3>Original</h3>
-  <audio controls src="demos/original.mp3"></audio>
+  <p class="caption">
+    Demonstration of a LoRA concept slider trained to edit the perceived emotion
+    of footstep sounds while preserving timing and scene structure.
+  </p>
 
-  <h3>Calm edit, α = -5</h3>
-  <audio controls src="demos/hallway_walk_s-5.mp3"></audio>
+  <!-- ===================================================== -->
+  <!-- ===================== DEMOS ========================= -->
+  <!-- ===================================================== -->
 
-  <h3>Neutral edit, α = 0</h3>
-  <audio controls src="demos/hallway_walk_s0.mp3"></audio>
+  <div class="slider-section">
 
-  <h3>Angry edit, α = +5</h3>
-  <audio controls src="demos/hallway_walk_s+5.mp3"></audio>
+    <h2>Demo 1 — Hallway footsteps</h2>
+
+    <div class="audio-grid">
+
+      <div class="audio-card">
+        <h4>α = -3</h4>
+        <audio controls src="demos/hallway_walk_s-3.mp3"></audio>
+      </div>
+
+      <div class="audio-card">
+        <h4>α = -2</h4>
+        <audio controls src="demos/hallway_walk_s-2.mp3"></audio>
+      </div>
+
+      <div class="audio-card">
+        <h4>α = -1</h4>
+        <audio controls src="demos/hallway_walk_s-1.mp3"></audio>
+      </div>
+
+      <div class="audio-card">
+        <h4>Original</h4>
+        <audio controls src="demos/hallway_walk_original.mp3"></audio>
+      </div>
+
+      <div class="audio-card">
+        <h4>α = +1</h4>
+        <audio controls src="demos/hallway_walk_s+1.mp3"></audio>
+      </div>
+
+      <div class="audio-card">
+        <h4>α = +2</h4>
+        <audio controls src="demos/hallway_walk_s+2.mp3"></audio>
+      </div>
+
+      <div class="audio-card">
+        <h4>α = +3</h4>
+        <audio controls src="demos/hallway_walk_s+3.mp3"></audio>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="slider-section">
+
+    <h2>Demo 2 — Outdoor footsteps</h2>
+
+    <div class="audio-grid">
+
+      <div class="audio-card">
+        <h4>α = -3</h4>
+        <audio controls src="demos/outdoor_walk_s-3.mp3"></audio>
+      </div>
+
+      <div class="audio-card">
+        <h4>α = -2</h4>
+        <audio controls src="demos/outdoor_walk_s-2.mp3"></audio>
+      </div>
+
+      <div class="audio-card">
+        <h4>α = -1</h4>
+        <audio controls src="demos/outdoor_walk_s-1.mp3"></audio>
+      </div>
+
+      <div class="audio-card">
+        <h4>Original</h4>
+        <audio controls src="demos/outdoor_walk_original.mp3"></audio>
+      </div>
+
+      <div class="audio-card">
+        <h4>α = +1</h4>
+        <audio controls src="demos/outdoor_walk_s+1.mp3"></audio>
+      </div>
+
+      <div class="audio-card">
+        <h4>α = +2</h4>
+        <audio controls src="demos/outdoor_walk_s+2.mp3"></audio>
+      </div>
+
+      <div class="audio-card">
+        <h4>α = +3</h4>
+        <audio controls src="demos/outdoor_walk_s+3.mp3"></audio>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="slider-section">
+
+    <h2>Demo 3 — Boots footsteps</h2>
+
+    <div class="audio-grid">
+
+      <div class="audio-card">
+        <h4>α = -3</h4>
+        <audio controls src="demos/boots_walk_s-3.mp3"></audio>
+      </div>
+
+      <div class="audio-card">
+        <h4>α = -2</h4>
+        <audio controls src="demos/boots_walk_s-2.mp3"></audio>
+      </div>
+
+      <div class="audio-card">
+        <h4>α = -1</h4>
+        <audio controls src="demos/boots_walk_s-1.mp3"></audio>
+      </div>
+
+      <div class="audio-card">
+        <h4>Original</h4>
+        <audio controls src="demos/boots_walk_original.mp3"></audio>
+      </div>
+
+      <div class="audio-card">
+        <h4>α = +1</h4>
+        <audio controls src="demos/boots_walk_s+1.mp3"></audio>
+      </div>
+
+      <div class="audio-card">
+        <h4>α = +2</h4>
+        <audio controls src="demos/boots_walk_s+2.mp3"></audio>
+      </div>
+
+      <div class="audio-card">
+        <h4>α = +3</h4>
+        <audio controls src="demos/boots_walk_s+3.mp3"></audio>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ===================================================== -->
+  <!-- ============== TRAINING EXAMPLES ==================== -->
+  <!-- ===================================================== -->
+
+  <h2>Training Examples</h2>
+
+  <p class="caption">
+    Examples from the calm and angry footstep datasets used to train the slider.
+  </p>
+
+  <div class="train-grid">
+
+    <!-- Row 1 -->
+    <div class="train-card">
+      <h4>Calm example 1</h4>
+      <audio controls src="emotion_train_set/calm/sample_001.mp3"></audio>
+    </div>
+
+    <div class="train-card">
+      <h4>Angry example 1</h4>
+      <audio controls src="emotion_train_set/angry/sample_001.mp3"></audio>
+    </div>
+
+    <!-- Row 2 -->
+    <div class="train-card">
+      <h4>Calm example 2</h4>
+      <audio controls src="emotion_train_set/calm/sample_002.mp3"></audio>
+    </div>
+
+    <div class="train-card">
+      <h4>Angry example 2</h4>
+      <audio controls src="emotion_train_set/angry/sample_002.mp3"></audio>
+    </div>
+
+    <!-- Row 3 -->
+    <div class="train-card">
+      <h4>Calm example 3</h4>
+      <audio controls src="emotion_train_set/calm/sample_003.mp3"></audio>
+    </div>
+
+    <div class="train-card">
+      <h4>Angry example 3</h4>
+      <audio controls src="emotion_train_set/angry/sample_003.mp3"></audio>
+    </div>
+
+    <!-- Row 4 -->
+    <div class="train-card">
+      <h4>Calm example 4</h4>
+      <audio controls src="emotion_train_set/calm/sample_004.mp3"></audio>
+    </div>
+
+    <div class="train-card">
+      <h4>Angry example 4</h4>
+      <audio controls src="emotion_train_set/angry/sample_004.mp3"></audio>
+    </div>
+
+    <!-- Row 5 -->
+    <div class="train-card">
+      <h4>Calm example 5</h4>
+      <audio controls src="emotion_train_set/calm/sample_005.mp3"></audio>
+    </div>
+
+    <div class="train-card">
+      <h4>Angry example 5</h4>
+      <audio controls src="emotion_train_set/angry/sample_005.mp3"></audio>
+    </div>
+
+  </div>
+
 </body>
 </html>
