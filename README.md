@@ -1,19 +1,37 @@
-## Audio demos:
+# Towards Continuous Semantic Audio Editing with Concept Sliders
 
-Interactive audio demos are available here, reviewers are encouraged to listen to some of them:  
+This repository contains interactive audio demos, code, and pretrained checkpoints for the paper:
+
+> *Towards Continuous Semantic Audio Editing with Concept Sliders*  
+> Submitted to NeurIPS 2026.
+
+In accordance with double-blind review policies, this repository has been fully anonymized.
+
+---
+
+## Audio demos
+
+Interactive audio demonstrations are available here:  
+
 https://audiosliderreview2026-byte.github.io/Audio-Concept-Sliders
 
+Reviewers are encouraged to listen to several examples across different slider strengths.
 
-## LoRA checkpoints: 
-Checkpoints for the LoRA modules are available in the "checkpoint folder". 
+---
 
-Inference scripts to use them are also provided in the "evaluation" folder. The usage of the inference scripts require the download of the AudioDLM2 backbone
-Be mindful to use the same number of diffusion steps and LoRA during inference as the loaded module was trained with. 
+## LoRA checkpoints
 
+Pretrained LoRA checkpoints are available in the `checkpoints/` folder.
 
-## Conda environment:
-Install a new conda environment with the environment.yml file.
+Inference scripts are provided in the `evaluation/` folder. Running inference requires downloading the AudioLDM2 backbone separately.
 
+Please ensure that the number of diffusion steps and the LoRA rank used during inference match those used during training of the selected checkpoint.
 
-## Code:
-LoRA modules implementation, training and evaluations scripts relative to the paper are available in both "slider" and "evaluation" folders.
+---
+
+## Conda environment
+
+A reproducible conda environment can be installed using:
+
+```bash
+conda env create -f environment.yml
